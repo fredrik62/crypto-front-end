@@ -1,12 +1,55 @@
-<div class="parallax"></div>
+<div class="parallax-top">
+  
+</div>
 
 
 <div class="box-page-wrapper">
-<div class="top-volume">
-
+<div class="top-volume cursor" (click)="redirectToVolume()">
+<h1>top volume</h1>
+<a class="link-btn" href="/">READ MORE</a>
 </div>
-<div class="top-coins">
-
+<div class="top-coins cursor" (click)="redirectToCoins()">
+<h1><i class="fab fa-bitcoin"></i></h1>
+</div>
+<div class="wide-box cursor" (click)="redirectToNews()">
+<h1>news</h1>
+</div>
+<div class="wide-box">
+<h1>market information</h1>
+<div class="market-information">
+<div>
+    <div class="coin-image">
+        <img class="logo" src="/assets/images/bitcoin-logo-orange.png" alt="coin-logo">
+    </div>
+    <div class="coin-daily">
+    <h1 class="price" [ngClass]="{'positive-price': crypto.quotes.USD.positive }">${{bitcoinInfo.price}}</h1>
+    <h1 class="price" [ngClass]="{'positive-price': crypto.quotes.USD.positive }">{{bitcoinInfo.percent_change_24h}}%</h1>
+    <h1>${{bitcoinInfo.volume_24h | number : '1.1-1'}}</h1>
+    </div>
+</div>
+<div>
+    <div class="coin-image">
+        <img class="logo" src="/assets/images/eth-logo-blue.png" alt="coin-logo">
+    </div>
+    <div class="coin-daily">
+        <h1 class="price" [ngClass]="{'positive-price': crypto.quotes.USD.positive }">${{ethereumInfo.price}}</h1>
+        <h1 class="price" [ngClass]="{'positive-price': crypto.quotes.USD.positive }" >{{ethereumInfo.percent_change_24h}}%</h1>
+        <h1>${{ethereumInfo.volume_24h | number : '1.1-1'}}</h1>
+        </div>
+</div>
+<div>
+    <div class="coin-image">
+        <img class="logo" src="/assets/images/ripple-logo-grey.png" alt="coin-logo">
+    </div>
+    <div class="coin-daily">
+        <h1 class="price" [ngClass]="{'positive-price': crypto.quotes.USD.positive }">${{rippleInfo.price}}</h1>
+        <h1 class="price" [ngClass]="{'positive-price': crypto.quotes.USD.positive }">{{rippleInfo.percent_change_24h}}%</h1>
+        <h1>${{rippleInfo.volume_24h | number : '1.1-1'}}</h1>
+    </div>
+</div>
+</div>
+</div>
 </div>
 
-</div>
+<div class="parallax-bottom"></div>
+

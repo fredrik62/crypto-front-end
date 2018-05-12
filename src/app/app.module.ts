@@ -15,6 +15,8 @@ import { LoginPageComponent } from './pages/login-page/login-page.component';
 import { SignUpPageComponent } from './pages/sign-up-page/sign-up-page.component';
 import { CryptoTopListPageComponent } from './pages/crypto-top-list-page/crypto-top-list-page.component';
 import { CryptoChartPageComponent } from './pages/crypto-chart-page/crypto-chart-page.component';
+import { CryptoNewsPageComponent } from './pages/crypto-news-page/crypto-news-page.component';
+import { CryptoTopIncreasePageComponent } from './pages/crypto-top-increase-page/crypto-top-increase-page.component';
 
 //services
 import { AuthService } from './services/auth.service';
@@ -33,7 +35,10 @@ const routes: Routes = [
   { path: 'login',  component: LoginPageComponent, canActivate: [ RequireAnonGuardService ]},
   { path: 'signup',  component: SignUpPageComponent, canActivate: [ InitAuthGuardService ] },
   { path: 'topcoins',  component: CryptoTopListPageComponent, canActivate: [ InitAuthGuardService ] },
-  { path: 'topcoins/:id',  component: CryptoChartPageComponent, canActivate: [ InitAuthGuardService ] }
+  { path: 'topcoins/:id',  component: CryptoChartPageComponent, canActivate: [ InitAuthGuardService ] },
+  { path: 'gainers-losers',  component: CryptoTopIncreasePageComponent, canActivate: [ InitAuthGuardService ] },
+  { path: 'cryptocurrency-news',  component: CryptoNewsPageComponent, canActivate: [ InitAuthGuardService ] }
+  
 ];
 
 @NgModule({
@@ -44,7 +49,9 @@ const routes: Routes = [
     SignUpPageComponent,
     CryptoTopListPageComponent,
     CryptoTopListCardComponent,
-    CryptoChartPageComponent
+    CryptoChartPageComponent,
+    CryptoNewsPageComponent,
+    CryptoTopIncreasePageComponent
   ],
   imports: [
     BrowserModule,
