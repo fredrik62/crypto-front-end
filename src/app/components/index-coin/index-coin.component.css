@@ -1,0 +1,28 @@
+#canvas {
+  padding:50px;
+  height: 80vh;
+ 
+}
+
+.global {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.index-chart-information > div {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  text-transform: uppercase;
+}
+
+@media (max-width:768px) {
+ #canvas {
+   width: 100vw;
+ }
+ 
+ .index-chart-information > div {
+   font-size: 12px;
+ }
+  
+}

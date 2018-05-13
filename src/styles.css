@@ -83,6 +83,8 @@ p {
   color: #f0f0f0;
   font-weight: bold;
   cursor: pointer;
+  text-transform: uppercase;
+ 
   
 }
 
@@ -183,15 +185,24 @@ a {
   text-decoration: none;
   color: #f0f0f0;
 }
+
+
 .nav-right {
   font-size: 22px;
-  padding: 10px 10px 10px 10px;
+  padding: 10px 20px 20px 20px;
   text-transform: uppercase;
 }
 
 .nav-right > a {
   cursor: pointer;
+ 
 }
+.user-sessions{
+  border: 1px solid white;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
 
 .nav > .nav-header > .nav-title {
   display: inline-block;
@@ -218,33 +229,7 @@ a {
   color: #f0f0f0;
 }
 
-.nav > .nav-links > form {
-display: inline-block;
-padding:0;
-text-decoration: none;
-color: #f0f0f0;
 
-}
-
-.nav > .nav-links > form > button {
-  background: none;
-   color: inherit;
-   border: none;
-   padding: 13px 10px 13px 10px;
-   font: inherit;
-   cursor: pointer;
-   outline: inherit;
-  border: none;
-  
-}
-
-.nav > .nav-links > a:hover {
-  background-color: #39dc79;
-}
-
-.nav > .nav-links > form > button:hover {
-  background-color: #39dc79;
-}
 
 .nav > #nav-check {
   display: none;
@@ -291,7 +276,7 @@ color: #f0f0f0;
     height: 0px;
   }
   .nav > #nav-check:checked + .nav-links {
-    height: calc(200px - 50px);
+    height: calc(100vh - 50px);
     overflow-y: auto;
   }
   .nav-right {
@@ -300,7 +285,6 @@ color: #f0f0f0;
     align-items: center;
     padding-top: 25px;
     padding-bottom: 25px;
-    border-bottom: 3px solid #373737;
     text-transform: uppercase;
     
   }
@@ -317,6 +301,9 @@ color: #f0f0f0;
     display: flex;
     flex-direction: column;
     
+  }
+  .user-sessions {
+    border: none;
   }
   
 } 

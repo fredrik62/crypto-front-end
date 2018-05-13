@@ -9,10 +9,6 @@ export class CryptoService {
 
   getCoinInfo() {
     return this.httpClient.get("https://api.coinmarketcap.com/v2/ticker/")
-    .map(result => 
-      this.result = Object.values(result["data"]))
-      
-
-      
-  }
+    .map(result => this.result = Object.values(result["data"]))
+      }
 }

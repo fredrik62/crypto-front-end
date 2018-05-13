@@ -5,8 +5,11 @@ import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
 
+//components
 import { AppComponent } from './app.component';
+import { HeaderComponent } from './components/header/header.component';
 import { CryptoTopListCardComponent } from './components/crypto-top-list-card/crypto-top-list-card.component';
+import { IndexCoinComponent } from './components/index-coin/index-coin.component';
 
 
 //pages
@@ -17,10 +20,13 @@ import { CryptoTopListPageComponent } from './pages/crypto-top-list-page/crypto-
 import { CryptoChartPageComponent } from './pages/crypto-chart-page/crypto-chart-page.component';
 import { CryptoNewsPageComponent } from './pages/crypto-news-page/crypto-news-page.component';
 import { CryptoTopIncreasePageComponent } from './pages/crypto-top-increase-page/crypto-top-increase-page.component';
+import { PortfolioPageComponent } from './pages/portfolio-page/portfolio-page.component';
 
 //services
 import { AuthService } from './services/auth.service';
 import { CryptoService } from './services/crypto.service';
+import { NewsService } from './services/news.service';
+import { CryptoChartService } from './services/crypto-chart.service';
 
 
 // -- guards
@@ -36,8 +42,10 @@ const routes: Routes = [
   { path: 'signup',  component: SignUpPageComponent, canActivate: [ InitAuthGuardService ] },
   { path: 'topcoins',  component: CryptoTopListPageComponent, canActivate: [ InitAuthGuardService ] },
   { path: 'topcoins/:id',  component: CryptoChartPageComponent, canActivate: [ InitAuthGuardService ] },
-  { path: 'gainers-losers',  component: CryptoTopIncreasePageComponent, canActivate: [ InitAuthGuardService ] },
-  { path: 'cryptocurrency-news',  component: CryptoNewsPageComponent, canActivate: [ InitAuthGuardService ] }
+  { path: 'gainers',  component: CryptoTopIncreasePageComponent, canActivate: [ InitAuthGuardService ] },
+  { path: 'cryptocurrency-news',  component: CryptoNewsPageComponent, canActivate: [ InitAuthGuardService ] },
+  { path: 'portfolio',  component: PortfolioPageComponent, canActivate: [ InitAuthGuardService ] },
+  { path: 'chart',  component: IndexCoinComponent, canActivate: [ InitAuthGuardService ] },
   
 ];
 
@@ -51,17 +59,22 @@ const routes: Routes = [
     CryptoTopListCardComponent,
     CryptoChartPageComponent,
     CryptoNewsPageComponent,
-    CryptoTopIncreasePageComponent
+    CryptoTopIncreasePageComponent,
+    PortfolioPageComponent,
+    IndexCoinComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     RouterModule.forRoot(routes),
-    FormsModule
+    FormsModule,
   ],
   providers: [
     AuthService,
     CryptoService,
+    NewsService,
+    CryptoChartService,
     RequireAnonGuardService,
     RequireUserGuardService,
     InitAuthGuardService

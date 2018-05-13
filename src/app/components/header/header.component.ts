@@ -1,14 +1,13 @@
-import { Component } from '@angular/core';
-import { AuthService } from './services/auth.service';
-import { Router } from '@angular/router';
-
+import { Component, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+import { AuthService } from '../../services/auth.service';
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: 'app-header',
+  templateUrl: './header.component.html',
+  styleUrls: ['./header.component.css']
 })
-export class AppComponent {
-  title = 'CryptoCurrency Tracker';
+export class HeaderComponent implements OnInit {
+
   loading = true;
   anon: boolean;
   user: any;
@@ -30,5 +29,5 @@ export class AppComponent {
     this.authService.logout()
       .then(() => this.router.navigate(['/']));
   }
-}
 
+}

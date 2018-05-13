@@ -42,11 +42,11 @@
     white-space: nowrap;
 }
 
-.box-page-wrapper > div {
+.box-page-wrapper > .small-box {
     margin-top: 20px;
     border: 3px solid #373737;
     min-height: 30vh;
-    width: 40vw;
+    width: 40%;
     padding: 20px;
     
 }
@@ -93,8 +93,23 @@
   .positive-price {
   color: green;
    }
+
+   .portfolio {
+      /* background-image: url("");*/
+       background-size: contain;
+       background-repeat: no-repeat;
+       background-position: center;
+   }
+
+   .top-news {
+       background-image: url("https://lh4.googleusercontent.com/k9axfWBWJjZWauLh8s1R6yf_EW7HP4H9vOg1_f2t145Y0x77gDOBL0N1JbFPPFyd07fVzuE5QbVv4PXBJyxxzQgluh3XDiwezmn-hjBZggEuIrD1j6EvMfX5-XS1CK9l5g1YAy0K");
+       background-size: cover;
+       background-repeat: no-repeat;
+       background-position: center;
+   }
+   
 @media (max-width:768px) {
-.box-page-wrapper > div {
+.box-page-wrapper > .small-box {
     width: 90vw;
     padding-bottom: 50px;
 }
@@ -106,4 +121,8 @@
  h1 {
      font-size: 1.6em;
  }
+ .coin-image > .logo {
+    min-width: 50px;
+    max-height: 35px;
+}
 }
