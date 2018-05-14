@@ -19,4 +19,9 @@ export class CryptoService {
     return this.httpClient.get(`https://api.coinmarketcap.com/v2/ticker/${id}/`)
     .map(result =>  result);
   }
+
+  getOneCoinChart(name) {
+    return this.httpClient.get(`https://min-api.cryptocompare.com/data/histoday?fsym=${name}&tsym=USD&limit=10`)
+    .map(result =>  result);
+  }
 }

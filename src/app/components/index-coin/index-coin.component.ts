@@ -11,7 +11,7 @@ import { Chart } from 'chart.js';
 })
 export class IndexCoinComponent implements OnInit {
     chart = [];
-    donutCanvas = [];
+    donutCanvas: any;
     activeCryptos: any;
     activeMarkets: any;
     bitcoinShareOfMarket: any;
@@ -74,7 +74,6 @@ export class IndexCoinComponent implements OnInit {
                 }
             })
 
-
         })
 
         this.cryptoChartService.bitcoinDominance()
@@ -91,7 +90,6 @@ export class IndexCoinComponent implements OnInit {
             data: {
               labels: ["Bitcoin Market Share", "Total Market Value"],
               datasets: [{
-                label: '# of Votes',
                 data: [this.bitcoinShareOfMarket, this.totalMarketValue],
                 backgroundColor: [
                   '#3cba9f',
@@ -111,7 +109,7 @@ export class IndexCoinComponent implements OnInit {
                     beginAtZero: true
                   }
                 }]
-              }
+              },
             }
           });
       })
