@@ -1,20 +1,24 @@
 <div class="parallax-top"></div>
 <div class="box-page-wrapper">
    <div class="top-volume small-box cursor" (click)="redirectToVolume()">
-      <h1>top volume</h1>
-      <a class="link-btn" [routerLink]="['/gainers']">view more</a>
+      <div class="overlay">
+          <div class="text">View Top Gainers</div>
+        </div>
    </div>
    <div class="top-coins small-box cursor" (click)="redirectToCoins()">
-      <h1>top coins</h1>
-      <a class="link-btn" [routerLink]="['/topcoins']">view more</a>
-   </div>
+      <div class="overlay">
+          <div class="text">View Top Coins</div>
+        </div>
+      </div>
    <div class="small-box cursor top-news" (click)="redirectToNews()">
-      <h1>news</h1>
-      <a class="link-btn" [routerLink]="['/cryptocurrency-news']">view more</a>
+      <div class="overlay">
+          <div class="text">Read More</div>
+        </div>
    </div>
    <div class="small-box cursor portfolio" (click)="redirectToPortfolio()">
-      <h1>portfolio</h1>
-      <a class="link-btn" [routerLink]="['/portfolio']">view more</a>
+      <div class="overlay">
+          <div class="text">Build your portfolio</div>
+        </div>
    </div>
    <div class="wide-box">
       <h1>market information</h1>

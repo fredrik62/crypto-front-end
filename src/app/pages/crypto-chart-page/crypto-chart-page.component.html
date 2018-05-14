@@ -1,3 +1,36 @@
-<p>
-  crypto-chart-page works!
-</p>
+<div *ngIf="!cryptos">
+    <p>..loading</p>
+ </div>
+ <div class="main-chart-wrapper">
+    <h1 class="coin-name">{{coinName}}</h1>
+    <div class="gen-coin-info">
+       <div>
+          <h1>Rank: {{coinRank}}</h1>
+       </div>
+       <div>
+          <h1>Circulating Supply {{circulatingSupply | number : '1.2-2'}}</h1>
+       </div>
+       <div>
+          <h1>Max Supply {{maxSupply | number : '1.2-2'}}</h1>
+       </div>
+    </div>
+    <!-- canvas goes here -->
+    <div *ngIf="!chart">
+       <p>..loading</p>
+    </div>
+    <div>
+       <canvas id="canvas">--{{ chart }}--</canvas>
+    </div>
+    <div class="gen-coin-info">
+       <div>
+          <h1>1H: {{percentageHour}}%</h1>
+       </div>
+       <div>
+          <h1>24h: {{percentageDaily}}%</h1>
+       </div>
+       <div>
+          <h1>7 Day: {{percentageWeekly}}%</h1>
+       </div>
+    </div>
+    <div class="timestamp"> Last Updated @ {{timeStamp}}</div>
+ </div>

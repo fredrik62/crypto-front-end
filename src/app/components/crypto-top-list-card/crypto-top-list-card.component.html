@@ -1,13 +1,14 @@
 <div *ngIf="!cryptos">
   <p>no cryptos</p>
   </div>
+
   <div class="crypto-row">
     <h4>Coin</h4>
     <h4>Price</h4>
     <h4>24H %</h4>
   </div>
   
-  <div  class="crypto-row" *ngFor="let crypto of cryptos" (click)="coinGraphRedirect(crypto.id)">
+  <div class="crypto-row" *ngFor="let crypto of cryptos" (click)="coinGraphRedirect(crypto.id)">
     <div>
     <span>{{crypto.symbol}}</span>
     </div>

@@ -19,15 +19,7 @@
     
   } 
 
-  .parallax-bottom{
-    background-image: url("/assets/images/parallax-bottom.jpg");
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 90vh;
-    
-  } 
+
 
 .box-page-wrapper {
     display: flex;
@@ -44,15 +36,42 @@
 
 .box-page-wrapper > .small-box {
     margin-top: 20px;
-    border: 3px solid #373737;
+  /*  border: 3px solid #373737;*/
     min-height: 30vh;
     width: 40%;
     padding: 20px;
     
 }
 
+.overlay {
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: #011631;
+  }
+  
+  .small-box:hover .overlay {
+    opacity: 1;
+  }
+  
+  .text {
+    color: white;
+    font-size: 32px;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  
+
 .box-page-wrapper > .wide-box{
-    margin-top: 20px;
+    margin-top: 120px;
     width: 90vw;
     text-align: center;
 
@@ -94,9 +113,23 @@
   color: green;
    }
 
+
+   .top-volume {
+    background-image: url("http://www.islabit.com/wp-content/uploads/2018/05/Bitcoin-5.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.top-coins {
+    background-image: url("https://img.freepik.com/free-vector/bitcoin-design-with-rising-arrow_1017-9625.jpg?size=338&ext=jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
    .portfolio {
-      /* background-image: url("");*/
-       background-size: contain;
+       background-image: url("https://cdn-images-1.medium.com/max/1500/1*mXLf9Qx_OS25FJM4_tVofA.jpeg");
+       background-size: cover;
        background-repeat: no-repeat;
        background-position: center;
    }
@@ -123,6 +156,6 @@
  }
  .coin-image > .logo {
     min-width: 50px;
-    max-height: 35px;
+    max-height: 45px;
 }
 }

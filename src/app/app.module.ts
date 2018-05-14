@@ -7,7 +7,6 @@ import { HttpClientModule } from '@angular/common/http';
 
 //components
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './components/header/header.component';
 import { CryptoTopListCardComponent } from './components/crypto-top-list-card/crypto-top-list-card.component';
 import { IndexCoinComponent } from './components/index-coin/index-coin.component';
 
@@ -61,8 +60,7 @@ const routes: Routes = [
     CryptoNewsPageComponent,
     CryptoTopIncreasePageComponent,
     PortfolioPageComponent,
-    IndexCoinComponent,
-    HeaderComponent
+    IndexCoinComponent
   ],
   imports: [
     BrowserModule,

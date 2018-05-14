@@ -10,11 +10,18 @@ import { Chart } from 'chart.js';
   styleUrls: ['./index-coin.component.css']
 })
 export class IndexCoinComponent implements OnInit {
-  chart = [];
-  activeCryptos: any;
-  activeMarkets: any;
-  bitcoinShareOfMarket: any;
-  constructor(private cryptoChartService: CryptoChartService) { }
+    chart = [];
+    donutCanvas = [];
+    activeCryptos: any;
+    activeMarkets: any;
+    bitcoinShareOfMarket: any;
+    totalMarketValue: any;
+    constructor(private cryptoChartService: CryptoChartService) { 
+        this.chart = [];
+        this.activeCryptos = [];
+        this.activeMarkets = [];
+        this.bitcoinShareOfMarket =  [];
+  }
 
   ngOnInit() {
     this.cryptoChartService.bitcoinMarketChart()
@@ -72,10 +79,41 @@ export class IndexCoinComponent implements OnInit {
 
         this.cryptoChartService.bitcoinDominance()
         .subscribe((res) => {
+            console.log(res);
          this.activeCryptos = res['data'].active_cryptocurrencies;
          this.activeMarkets = res['data'].active_markets;
          this.bitcoinShareOfMarket = res['data'].bitcoin_percentage_of_market_cap;
+         
+        this.totalMarketValue = 100 - this.bitcoinShareOfMarket;
        
+         this.donutCanvas = new Chart('donut-canvas', {
+            type: 'doughnut',
+            data: {
+              labels: ["Bitcoin Market Share", "Total Market Value"],
+              datasets: [{
+                label: '# of Votes',
+                data: [this.bitcoinShareOfMarket, this.totalMarketValue],
+                backgroundColor: [
+                  '#3cba9f',
+                  '#ffcc00'
+                ],
+                borderColor: [
+                  'rgba(255,99,132,1)',
+                  'rgba(54, 162, 235, 1)',
+                ],
+                borderWidth: 1
+              }]
+            },
+            options: {
+              scales: {
+                yAxes: [{
+                  ticks: {
+                    beginAtZero: true
+                  }
+                }]
+              }
+            }
+          });
       })
     }
 }

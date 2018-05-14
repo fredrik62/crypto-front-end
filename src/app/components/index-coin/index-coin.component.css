@@ -9,12 +9,6 @@
   text-transform: uppercase;
 }
 
-.index-chart-information > div {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  text-transform: uppercase;
-}
 
 @media (max-width:768px) {
  #canvas {

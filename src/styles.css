@@ -175,10 +175,13 @@ a {
   background: #121212;
   position: relative;
   z-index: 6;
+  display: flex;
+  justify-content: space-between;
 }
 
 .nav > .nav-header {
   display: inline;
+  
 }
 
 .nav-title a {
@@ -218,7 +221,6 @@ a {
 
 .nav > .nav-links {
   display: inline;
-  float: right;
   font-size: 18px;
 }
 

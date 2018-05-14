@@ -8,7 +8,15 @@ export class CryptoService {
   constructor(private httpClient: HttpClient) { }
 
   getCoinInfo() {
-    return this.httpClient.get("https://api.coinmarketcap.com/v2/ticker/")
-    .map(result => this.result = Object.values(result["data"]))
-      }
+    const options = {
+      withCredentials: true
+    };
+    return this.httpClient.get(`https://api.coinmarketcap.com/v2/ticker/`)
+     .map(result => this.result = Object.values(result["data"]))
+  }
+
+  getOneCoin(id: string) {
+    return this.httpClient.get(`https://api.coinmarketcap.com/v2/ticker/${id}/`)
+    .map(result =>  result);
+  }
 }

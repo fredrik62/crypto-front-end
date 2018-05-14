@@ -1,0 +1,35 @@
+.main-chart-wrapper {
+  padding-top: 50px;
+}
+
+.main-chart-wrapper > .coin-name {
+  text-align: center;
+  font-size: 5em;
+  text-transform: uppercase;
+}
+
+.main-chart-wrapper > .coin-rank {
+  text-align: center;
+  font-size: 3.5em;
+  text-transform: uppercase;
+}
+
+.main-chart-wrapper > .gen-coin-info {
+  display: flex;
+  justify-content: space-around;
+  border: 1px solid #373737;
+}
+
+.gen-coin-info > div {
+  width: 33%;
+  text-align: center;
+ 
+}
+
+.timestamp {
+  text-align: center;
+}
+
+#canvas {
+  max-height: 60vh;
+}
