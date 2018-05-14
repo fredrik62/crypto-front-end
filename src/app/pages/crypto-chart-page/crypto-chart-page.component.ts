@@ -23,6 +23,7 @@ export class CryptoChartPageComponent implements OnInit {
   percentageWeekly: String;
   timeStamp: String;
   priceDates = [];
+  
   constructor(private cryptoService: CryptoService, private activatedRoute: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {

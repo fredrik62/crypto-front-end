@@ -19,6 +19,7 @@ import { CryptoTopListPageComponent } from './pages/crypto-top-list-page/crypto-
 import { CryptoChartPageComponent } from './pages/crypto-chart-page/crypto-chart-page.component';
 import { CryptoNewsPageComponent } from './pages/crypto-news-page/crypto-news-page.component';
 import { CryptoTopIncreasePageComponent } from './pages/crypto-top-increase-page/crypto-top-increase-page.component';
+import { IncreaseDetailPageComponent } from './pages/increase-detail-page/increase-detail-page.component';
 import { PortfolioPageComponent } from './pages/portfolio-page/portfolio-page.component';
 
 //services
@@ -42,9 +43,10 @@ const routes: Routes = [
   { path: 'topcoins',  component: CryptoTopListPageComponent, canActivate: [ InitAuthGuardService ] },
   { path: 'topcoins/:id',  component: CryptoChartPageComponent, canActivate: [ InitAuthGuardService ] },
   { path: 'gainers',  component: CryptoTopIncreasePageComponent, canActivate: [ InitAuthGuardService ] },
+  { path: 'gainers/:id',  component: IncreaseDetailPageComponent, canActivate: [ InitAuthGuardService ] },
   { path: 'cryptocurrency-news',  component: CryptoNewsPageComponent, canActivate: [ InitAuthGuardService ] },
-  { path: 'portfolio',  component: PortfolioPageComponent, canActivate: [ InitAuthGuardService ] },
-  { path: 'chart',  component: IndexCoinComponent, canActivate: [ InitAuthGuardService ] },
+  { path: 'portfolio',  component: PortfolioPageComponent, canActivate: [ InitAuthGuardService ] }
+  
   
 ];
 
@@ -59,8 +61,10 @@ const routes: Routes = [
     CryptoChartPageComponent,
     CryptoNewsPageComponent,
     CryptoTopIncreasePageComponent,
+    IncreaseDetailPageComponent,
     PortfolioPageComponent,
     IndexCoinComponent
+  
   ],
   imports: [
     BrowserModule,

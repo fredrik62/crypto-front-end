@@ -34,20 +34,7 @@ export class IndexPageComponent implements OnInit {
 
        this.ripple.push(this.coinInfo[2]);
        this.rippleInfo = this.ripple[0].quotes.USD;
-      
-      /*  this.displayColor.push(this.bitcoinInfo, this.ethereumInfo, this.rippleInfo);
-        console.log(this.displayColor);
-        
-       this.displayColor.forEach((crypto) => {
-        let changeToday = crypto.quotes.USD.percent_change_24h;
-        console.log(changeToday);
-        if (changeToday > 0) {
-          crypto.quotes.USD.positive = true;
-        } else {
-          crypto.quotes.USD.positive = false;
-        }
-      })
-      */
+  
      });
   }
 

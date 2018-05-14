@@ -1,0 +1,31 @@
+.crypto-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #191919;
+  color: #f0f0f0;
+  border-bottom:2px solid #373737;
+  cursor: pointer;
+  padding: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  outline: none;
+  transition: 0.4s;
+  max-width: 1000px;
+  margin: 0 auto;
+  
+}
+
+.crypto-row:hover, .crypto-row:active {
+  background-color: #696969;
+}
+
+.crypto-row > h4 {
+ text-align: center;
+ 
+}
+
+
+.positive-price {
+color: green;
+ }
