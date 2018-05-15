@@ -44,6 +44,7 @@ export class CryptoChartPageComponent implements OnInit {
                    coinRank: this.cryptos.data.rank,
                    circulatingSupply: this.cryptos.data.circulating_supply,
                    maxSupply: this.cryptos.data.max_supply,
+                   coinPrice: this.cryptos.data.quotes.USD.price,
                    percentageHour: this.cryptos.data.quotes.USD.percent_change_1h,
                    percentageDaily: this.cryptos.data.quotes.USD.percent_change_24h,
                    percentageWeekly: this.cryptos.data.quotes.USD.percent_change_7d
@@ -72,18 +73,19 @@ export class CryptoChartPageComponent implements OnInit {
                           }))
                       })
                         
+                      
                       this.chart = new Chart('canvas', {
                           type: 'line',
                           data: {
                               labels: this.priceDates,
                               datasets: [{
                                       data: highPrice,
-                                      borderColor: '#008000',
+                                      borderColor: '#f7931a',
                                       fill: false
                                   },
                                   {
                                       data: lowPrice,
-                                      borderColor: '#bf0d0d',
+                                      borderColor: '#f0f0f0',
                                       fill: false
                                   },
                               ]

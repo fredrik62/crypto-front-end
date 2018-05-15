@@ -26,8 +26,10 @@
     justify-content: space-around;
     flex-wrap: wrap;
     text-align: center;
-    padding-top: 50px;
+    padding-top: 100px;
     padding-bottom: 50px;
+    max-width: 1300px;
+    margin: 0 auto;
 }
  h1 {
     text-transform: uppercase;
@@ -35,11 +37,9 @@
 }
 
 .box-page-wrapper > .small-box {
-    margin-top: 20px;
-  /*  border: 3px solid #373737;*/
+    margin-top: 45px;
     min-height: 30vh;
-    width: 40%;
-    padding: 20px;
+    width: 46%;
     
 }
 
@@ -48,7 +48,7 @@
     width: 100%;
     opacity: 0;
     transition: .5s ease;
-    background-color: #011631;
+    background-color: #000000b0;
   }
   
   .small-box:hover .overlay {
@@ -106,12 +106,8 @@
     padding: 30px;
 }
 
-.price {
-    color: #bf0d0d
-  }
-  .positive-price {
-  color: green;
-   }
+
+
 
 
    .top-volume {
@@ -149,6 +145,7 @@
 
 .market-information > div {
     width: 90vw;
+    
 }
 
  h1 {

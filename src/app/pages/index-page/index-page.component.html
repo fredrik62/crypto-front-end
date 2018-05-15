@@ -31,7 +31,7 @@
             <div class="coin-daily">
                <h1 class="price" [ngClass]="{'positive-price': coinData.percentage }">${{bitcoin[0].price}}</h1>
                <h1 class="price" [ngClass]="{'positive-price': coinData.percentage }">{{bitcoin[0].percentage}}%</h1>
-               <h1>${{bitcoin[0].volume | number : '1.1-1'}}</h1>
+               <h1 class="volume-index">${{bitcoin[0].volume | number : '1.1-1'}}</h1>
             </div>
          </div>
          <div>
@@ -41,7 +41,7 @@
             <div class="coin-daily">
                <h1 class="price" [ngClass]="{'positive-price': coinData.percentage }">${{ethereum[0].price}}</h1>
                <h1 class="price" [ngClass]="{'positive-price': coinData.percentage }">{{ethereum[0].percentage}}%</h1>
-               <h1>${{ethereum[0].volume | number : '1.1-1'}}</h1>
+               <h1 class="volume-index">${{ethereum[0].volume | number : '1.1-1'}}</h1>
             </div>
          </div>
          <div>
@@ -51,7 +51,7 @@
             <div class="coin-daily">
                <h1 class="price" [ngClass]="{'positive-price': coinData.percentage }">${{ripple[0].price}}</h1>
                <h1 class="price" [ngClass]="{'positive-price': coinData.percentage }">{{ripple[0].percentage}}%</h1>
-               <h1>${{ripple[0].volume | number : '1.1-1'}}</h1>
+               <h1 class="volume-index">${{ripple[0].volume | number : '1.1-1'}}</h1>
             </div>
          </div>
       </div>

@@ -2,19 +2,33 @@
     <p>..loading</p>
  </div>
  <div class="main-chart-wrapper">
-    <h1 class="coin-name">{{coinName}}</h1>
-    <div class="gen-coin-info">
-       <div>
-          <h1>Rank: {{coinRank}}</h1>
-       </div>
-       <div>
-          <h1>Circulating Supply {{circulatingSupply | number : '1.2-2'}}</h1>
-       </div>
-       <div>
-          <h1>Max Supply {{maxSupply | number : '1.2-2'}}</h1>
-       </div>
+    <h1 class="coin-name">{{coinData.coinName}}</h1>
+ <div class="table-wrap">
+    <table style="width:100%">
+        <tr>
+          <th>Coin</th>
+          <th>Rank</th>
+          <th>Price</th>
+          <th>Circulating Supply</th>
+          <th>Max Supply</th>
+          <th>1H Change %</th>
+          <th>24H Change %</th>
+          <th>7 Day Change %</th>
+        </tr>
+        <tr>
+          <td>{{coinData.coinName}}</td>
+          <td class="number">{{coinData.coinRank}}</td>
+          <td class="number">${{coinData.coinPrice}}</td>
+          <td class="number">{{coinData.circulatingSupply | number : '1.2-2'}}</td>
+          <td class="number">{{coinData.maxSupply | number : '1.2-2'}}</td>
+          <td class="number">{{coinData.percentageHour}}%</td>
+          <td class="number">{{coinData.percentageDaily}}%</td>
+          <td class="number">{{coinData.percentageWeekly}}%</td>
+        </tr>
+      </table>
     </div>
-    <!-- canvas goes here -->
+      </div>
+
     <div *ngIf="!chart">
        <p>..loading</p>
     </div>
@@ -22,15 +36,5 @@
        <canvas id="canvas">--{{ chart }}--</canvas>
     </div>
     <div class="gen-coin-info">
-       <div>
-          <h1 class="price" [ngClass]="{'positive-price': positive }">1H: {{coinData.percentageHour}}%</h1>
-       </div>
-       <div>
-          <h1 class="price" [ngClass]="{'positive-price': positive }">24h: {{coinData.percentageDaily}}%</h1>
-       </div>
-       <div>
-          <h1 class="price" [ngClass]="{'positive-price': positive }">7 Day: {{coinData.percentageWeekly}}%</h1>
-       </div>
-    </div>
     <div class="timestamp"> Last Updated @ {{priceDates[10]}}</div>
  </div>

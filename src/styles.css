@@ -38,7 +38,19 @@ p {
   margin: 0;
 }
 
+.price {
+  font-family: 'Share Tech Mono', monospace;
+  color: #ff0000 !important;
+}
 
+.volume-index {
+  font-family: 'Share Tech Mono', monospace;
+ 
+}
+.positive-price {
+  font-family: 'Share Tech Mono', monospace;
+  color: #52ff00 !important;
+}
 
 /* ---- layout ---- */
 
@@ -56,7 +68,7 @@ p {
 }
 
 #site-main {
- 
+ margin: 0 auto;
    
 }
 
@@ -95,74 +107,6 @@ a {
   text-decoration: none;
 }
 
-#site-footer {
-  width: 100%;
-  height: auto;
-  margin: auto;
-  background: #121212;
-  padding: 20px;
-
-}
-
-.footer-social-icons {
-  width: 100%;
-  height: auto;
-  margin: auto;
-
-}
-
-.footer-social-icons ul {
-  margin: 0px;
-  padding: 0px;
-  text-align: center;
-}
-
-
-.footer-social-icons ul li {
-  display: inline-block;
-  width: 50px;
-  height: 50px;
-  margin: 0px 10px;
-  border-radius: 100%;
-  background: #373737;
-}
-
-.footer-social-icons ul li a {
-  font-size: 25px;
-  color: #f0f0f0;
-}
-
-
-.footer-social-icons ul li a i {
-  line-height: 50px;
-}
-
-.footer-menu {
-  width: 100%;
-  height: auto;
-  margin: auto;
-  margin-top: 20px;
-}
-
-.footer-menu ul {
-  margin: 0px;
-  padding: 0px;
-  text-align: center;
-}
-
-.footer-menu ul li {
-  display: inline-block;
-  margin: 0px 15px;
-
-
-}
-
-.footer-menu ul li a {
-  color: #f0f0f0;
-  font-size: 20px;
-  font-weight: 600;
-  text-transform: uppercase;
-}
 
 /* navigation bar */
 
@@ -187,6 +131,10 @@ a {
 .nav-title a {
   text-decoration: none;
   color: #f0f0f0;
+}
+.nav-title a > img {
+  max-height: 35px;
+  max-width: 70%;
 }
 
 
@@ -237,7 +185,7 @@ a {
   display: none;
 }
 
-@media (max-width:768px) {
+@media (max-width:1015px) {
   .nav > .nav-btn {
     display: inline-block;
     position: absolute;
@@ -309,3 +257,4 @@ a {
   }
   
 } 
+
