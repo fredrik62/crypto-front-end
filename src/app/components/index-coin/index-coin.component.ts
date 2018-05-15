@@ -25,7 +25,8 @@ export class IndexCoinComponent implements OnInit {
 
   ngOnInit() {
     this.cryptoChartService.bitcoinMarketChart()
-        .subscribe((res) => {
+    .toPromise()
+        .then((res) => {
 
             let highPrice = res['Data'].map(res => res.high);
             let lowPrice = res['Data'].map(res => res.low);
@@ -49,12 +50,12 @@ export class IndexCoinComponent implements OnInit {
                     labels: priceDates,
                     datasets: [{
                             data: highPrice,
-                            borderColor: '#3cba9f',
+                            borderColor: '#008000',
                             fill: false
                         },
                         {
                             data: lowPrice,
-                            borderColor: '#ffcc00',
+                            borderColor: '#bf0d0d',
                             fill: false
                         },
                     ]
@@ -77,8 +78,9 @@ export class IndexCoinComponent implements OnInit {
         })
 
         this.cryptoChartService.bitcoinDominance()
-        .subscribe((res) => {
-            console.log(res);
+        .toPromise()
+        .then((res) => {
+            
          this.activeCryptos = res['data'].active_cryptocurrencies;
          this.activeMarkets = res['data'].active_markets;
          this.bitcoinShareOfMarket = res['data'].bitcoin_percentage_of_market_cap;
@@ -92,8 +94,8 @@ export class IndexCoinComponent implements OnInit {
               datasets: [{
                 data: [this.bitcoinShareOfMarket, this.totalMarketValue],
                 backgroundColor: [
-                  '#3cba9f',
-                  '#ffcc00'
+                  '#008000',
+                  '#bf0d0d'
                 ],
                 borderColor: [
                   'rgba(255,99,132,1)',
@@ -103,13 +105,7 @@ export class IndexCoinComponent implements OnInit {
               }]
             },
             options: {
-              scales: {
-                yAxes: [{
-                  ticks: {
-                    beginAtZero: true
-                  }
-                }]
-              },
+            
             }
           });
       })

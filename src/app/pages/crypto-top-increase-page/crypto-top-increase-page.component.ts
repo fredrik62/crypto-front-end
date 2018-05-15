@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { CryptoService } from '../../services/crypto.service';
 import { HttpClient, HttpResponse } from '@angular/common/http'
 import { Router, ActivatedRoute } from '@angular/router';
@@ -9,33 +9,34 @@ import { Router, ActivatedRoute } from '@angular/router';
 })
 export class CryptoTopIncreasePageComponent implements OnInit {
   cryptos: any;
-  topIncrease: Array<any> = [];
-  constructor(private cryptoService: CryptoService, private activatedRoute: ActivatedRoute, private router: Router) { }
+  topIncrease: Array < any > = [];
+
+  constructor(private cryptoService: CryptoService, private activatedRoute: ActivatedRoute, private router: Router) {}
 
   ngOnInit() {
-    this.cryptoService.getCoinInfo()
-      .toPromise()
-      .then((res) => {
-        this.cryptos = res;
-        this.cryptos.forEach(crypto => {
-          let increase = {
-            percentage: crypto.quotes.USD.percent_change_7d,
-            name: crypto.name,
-            coinId: crypto.id,
-            coinPrice: crypto.quotes.USD.price,
-            symbol: crypto.symbol
-          }
-          if (increase.percentage > 20) {
-            this.topIncrease.push(increase);
-          }
+      this.cryptoService.getCoinInfo()
+          .toPromise()
+          .then((res) => {
+              this.cryptos = res;
+              this.cryptos.forEach(crypto => {
+                  let increase = {
+                      percentage: crypto.quotes.USD.percent_change_7d,
+                      name: crypto.name,
+                      coinId: crypto.id,
+                      coinPrice: crypto.quotes.USD.price,
+                      symbol: crypto.symbol
+                  }
+                  if (increase.percentage > 20) {
+                      this.topIncrease.push(increase);
+                  }
 
-        });
-        
+              });
 
-      })
-    }
-        coinGraphRedirect(id){
-            this.router.navigate(['gainers', id]);
-        }
 
-}
+          })
+  }
+  coinGraphRedirect(id) {
+      this.router.navigate(['gainers', id]);
+  }
+
+  }

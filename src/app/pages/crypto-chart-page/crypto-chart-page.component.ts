@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, HostListener } from '@angular/core';
 import { CryptoService } from '../../services/crypto.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
@@ -10,21 +10,24 @@ import { Chart } from 'chart.js';
   styleUrls: ['./crypto-chart-page.component.css']
 })
 export class CryptoChartPageComponent implements OnInit {
-  chart = [];
+  chart: any;
   cryptos: any;
   priceToday: String;
   volumeToday: String;
-  coinRank: String;
-  coinName: String;
-  circulatingSupply: String;
-  maxSupply: String;
-  percentageHour: String;
-  percentageDaily: String;
-  percentageWeekly: String;
   timeStamp: String;
+  positive: boolean;
   priceDates = [];
+  coinData: any = [];
+  desktopDisplay: boolean = window.innerWidth > 400;
+
+  @HostListener('window:resize') resizeDetection() { 
+    this.desktopDisplay = window.innerWidth > 800;
+    this.chart.options.scales.xAxes[0].ticks.display = window.innerWidth > 800;
+  }
   
-  constructor(private cryptoService: CryptoService, private activatedRoute: ActivatedRoute, private router: Router) { }
+  constructor(private cryptoService: CryptoService, private activatedRoute: ActivatedRoute, private router: Router) {
+      
+   }
 
   ngOnInit() {
     this.activatedRoute.params.subscribe((params) => {
@@ -35,20 +38,28 @@ export class CryptoChartPageComponent implements OnInit {
           .then((res) => {
               this.cryptos = res;
               const name = this.cryptos.data.symbol;
-              this.coinName = this.cryptos.data.name;
-              this.coinRank = this.cryptos.data.rank;
-              this.circulatingSupply = this.cryptos.data.circulating_supply;
-              this.maxSupply = this.cryptos.data.max_supply;
-              this.percentageHour = this.cryptos.data.quotes.USD.percent_change_1h;
-              this.percentageDaily = this.cryptos.data.quotes.USD.percent_change_24h;
-              this.percentageWeekly = this.cryptos.data.quotes.USD.percent_change_7d;
-  
+                
+              this.coinData = {
+                   coinName: this.cryptos.data.name,
+                   coinRank: this.cryptos.data.rank,
+                   circulatingSupply: this.cryptos.data.circulating_supply,
+                   maxSupply: this.cryptos.data.max_supply,
+                   percentageHour: this.cryptos.data.quotes.USD.percent_change_1h,
+                   percentageDaily: this.cryptos.data.quotes.USD.percent_change_24h,
+                   percentageWeekly: this.cryptos.data.quotes.USD.percent_change_7d
+               
+              }
+          
+          
               this.cryptoService.getOneCoinChart(name)
                   .toPromise()
                   .then((res) => {
                       let highPrice = res['Data'].map(res => res.high);
                       let lowPrice = res['Data'].map(res => res.low);
                       let allDates = res['Data'].map(res => res.time);
+                      
+                      
+                      
   
                       
   
@@ -60,19 +71,19 @@ export class CryptoChartPageComponent implements OnInit {
                               day: 'numeric'
                           }))
                       })
-                        console.log(this.priceDates);
+                        
                       this.chart = new Chart('canvas', {
                           type: 'line',
                           data: {
                               labels: this.priceDates,
                               datasets: [{
                                       data: highPrice,
-                                      borderColor: '#3cba9f',
+                                      borderColor: '#008000',
                                       fill: false
                                   },
                                   {
                                       data: lowPrice,
-                                      borderColor: '#ffcc00',
+                                      borderColor: '#bf0d0d',
                                       fill: false
                                   },
                               ]
@@ -83,7 +94,8 @@ export class CryptoChartPageComponent implements OnInit {
                               },
                               scales: {
                                   xAxes: [{
-                                      display: true
+                                      display: this.desktopDisplay
+                                      
                                   }],
                                   yAxes: [{
                                       display: true

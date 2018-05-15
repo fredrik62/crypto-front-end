@@ -1,17 +1,16 @@
 <div class="index-chart-information">
-<div>
-<h1 class="global">Global Data</h1>
-<div class="btc-dom">
-    <canvas id="donut-canvas">--{{ donutCanvas }}--</canvas>
-</div>
-</div>
+    <div>
+        <h1 class="global">Global Data</h1>
+        <div class="btc-dom">
+            <canvas id="donut-canvas">--{{ donutCanvas }}--</canvas>
+        </div>
+    </div>
 </div>
 
 <div *ngIf="!chart">
-<p>..loading</p>
+    <p>..loading</p>
 </div>
 
 <div>
-  <canvas id="canvas">--{{ chart }}--</canvas>
+    <canvas id="canvas">--{{ chart }}--</canvas>
 </div>
-

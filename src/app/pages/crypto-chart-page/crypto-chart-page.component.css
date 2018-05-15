@@ -33,3 +33,10 @@
 #canvas {
   max-height: 60vh;
 }
+
+.price {
+  color: #bf0d0d
+}
+.positive-price {
+color: green;
+ }

@@ -9,52 +9,62 @@ import { CryptoService } from '../../services/crypto.service';
   styleUrls: ['./index-page.component.css']
 })
 export class IndexPageComponent implements OnInit {
-  coinInfo: Array<any>;
+  coinInfo: Array<any>
   bitcoin: Array<any> = [];
-  bitcoinInfo: Array<any>;
   ethereum: Array<any> = [];
-  ethereumInfo: Array<any>;
   ripple: Array<any> = [];
-  rippleInfo: Array<any>;
-  displayColor: Array<any> = [];
+  coinData: any;
+ 
   constructor(private cryptoService: CryptoService, private router: Router) { }
 
   ngOnInit() {
     this.cryptoService.getCoinInfo()
-     .subscribe(res => { 
-       this.coinInfo = res;
-      //console.log(this.coinInfo);
-       // bitcoin data in market information boxes
-       this.bitcoin.push(this.coinInfo[0]);
-       this.bitcoinInfo = this.bitcoin[0].quotes.USD;
-      
-       this.ethereum.push(this.coinInfo[18]);
-       this.ethereumInfo = this.ethereum[0].quotes.USD;
-       
+        .toPromise()
+        .then(res => {
+            this.coinInfo = res;
+            this.coinInfo.forEach(crypto => {
+            
+                this.coinData = {
+                    id: crypto.id,
+                    volume: crypto.quotes.USD.volume_24h,
+                    percentage: crypto.quotes.USD.percent_change_24h,
+                    price: crypto.quotes.USD.price,
+                    name: crypto.name
+                }
+                switch (this.coinData.id) {
+                    case 1:
+                        this.bitcoin.push(this.coinData);
+                        break;
+                    case 52:
+                        this.ripple.push(this.coinData);
+                        break;
+                    case 1027:
+                        this.ethereum.push(this.coinData);
+                        break;
 
-       this.ripple.push(this.coinInfo[2]);
-       this.rippleInfo = this.ripple[0].quotes.USD;
-  
-     });
-  }
+                }
+                
+            });
+                    if (this.coinData.percentage > 0) {
+                        this.coinData.percentage = true;
+                    }
+            
+        });
+}
 
-  redirectToVolume() {
-    console.log("function called");
+redirectToVolume() {
     this.router.navigate(['gainers']);
-  }
-  
-  redirectToCoins() {
-    console.log("function called");
+}
+
+redirectToCoins() {
     this.router.navigate(['topcoins']);
-  }
+}
 
-  redirectToNews() {
-    console.log("function called");
+redirectToNews() {
     this.router.navigate(['cryptocurrency-news']);
-  }
+}
 
-  redirectToPortfolio() {
-    console.log("function called");
+redirectToPortfolio() {
     this.router.navigate(['portfolio']);
-  }
+}
 }

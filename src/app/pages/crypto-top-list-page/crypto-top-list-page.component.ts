@@ -13,9 +13,9 @@ export class CryptoTopListPageComponent implements OnInit {
 
   ngOnInit() {
     this.cryptoService.getCoinInfo()
-     .subscribe(res => { 
+    .toPromise()
+     .then(res => { 
        this.cryptos = res;
-       console.log(this.cryptos);
        this.cryptos.forEach((crypto) => {
           let changeToday = crypto.quotes.USD.percent_change_24h;
           if (changeToday > 0) {

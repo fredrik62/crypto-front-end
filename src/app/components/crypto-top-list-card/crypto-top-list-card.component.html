@@ -1,22 +1,22 @@
 <div *ngIf="!cryptos">
-  <p>no cryptos</p>
-  </div>
+    <p>no cryptos</p>
+</div>
 
-  <div class="crypto-row">
+<div class="crypto-row">
     <h4>Coin</h4>
     <h4>Price</h4>
     <h4>24H %</h4>
-  </div>
-  
-  <div class="crypto-row" *ngFor="let crypto of cryptos" (click)="coinGraphRedirect(crypto.id)">
+</div>
+
+<div class="crypto-row" *ngFor="let crypto of cryptos" (click)="coinGraphRedirect(crypto.id)">
     <div>
-    <span>{{crypto.symbol}}</span>
+        <span>{{crypto.symbol}}</span>
     </div>
     <div>
-    <span class="price usd-coin-price" [ngClass]="{'positive-price': crypto.quotes.USD.positive }"> ${{crypto.quotes.USD.price}}</span>
+        <span class="price usd-coin-price" [ngClass]="{'positive-price': crypto.quotes.USD.positive }"> ${{crypto.quotes.USD.price}}</span>
     </div>
     <div>
-    <span class="price"  [ngClass]="{'positive-price': crypto.quotes.USD.positive }">{{crypto.quotes.USD.percent_change_24h}}%</span>
-  </div>
+        <span class="price" [ngClass]="{'positive-price': crypto.quotes.USD.positive }">{{crypto.quotes.USD.percent_change_24h}}%</span>
+    </div>
 </div>
       

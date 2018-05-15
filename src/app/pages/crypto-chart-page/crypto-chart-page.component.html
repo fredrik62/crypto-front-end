@@ -23,13 +23,13 @@
     </div>
     <div class="gen-coin-info">
        <div>
-          <h1>1H: {{percentageHour}}%</h1>
+          <h1 class="price" [ngClass]="{'positive-price': positive }">1H: {{coinData.percentageHour}}%</h1>
        </div>
        <div>
-          <h1>24h: {{percentageDaily}}%</h1>
+          <h1 class="price" [ngClass]="{'positive-price': positive }">24h: {{coinData.percentageDaily}}%</h1>
        </div>
        <div>
-          <h1>7 Day: {{percentageWeekly}}%</h1>
+          <h1 class="price" [ngClass]="{'positive-price': positive }">7 Day: {{coinData.percentageWeekly}}%</h1>
        </div>
     </div>
     <div class="timestamp"> Last Updated @ {{priceDates[10]}}</div>

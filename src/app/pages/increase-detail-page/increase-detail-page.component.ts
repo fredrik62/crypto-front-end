@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+import { CryptoService } from '../../services/crypto.service';
 
 @Component({
   selector: 'app-increase-detail-page',
@@ -6,8 +8,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./increase-detail-page.component.css']
 })
 export class IncreaseDetailPageComponent implements OnInit {
-
-  constructor() { }
+ 
+  constructor(private cryptoService: CryptoService, private activatedRoute: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
   }

@@ -20,6 +20,7 @@
           <div class="text">Build your portfolio</div>
         </div>
    </div>
+   
    <div class="wide-box">
       <h1>market information</h1>
       <div class="market-information">
@@ -28,9 +29,9 @@
                <img class="logo" src="/assets/images/bitcoin-logo-orange.png" alt="coin-logo">
             </div>
             <div class="coin-daily">
-               <h1 class="price">${{bitcoinInfo.price}}</h1>
-               <h1 class="price">{{bitcoinInfo.percent_change_24h}}%</h1>
-               <h1>${{bitcoinInfo.volume_24h | number : '1.1-1'}}</h1>
+               <h1 class="price" [ngClass]="{'positive-price': coinData.percentage }">${{bitcoin[0].price}}</h1>
+               <h1 class="price" [ngClass]="{'positive-price': coinData.percentage }">{{bitcoin[0].percentage}}%</h1>
+               <h1>${{bitcoin[0].volume | number : '1.1-1'}}</h1>
             </div>
          </div>
          <div>
@@ -38,9 +39,9 @@
                <img class="logo" src="/assets/images/eth-logo-blue.png" alt="coin-logo">
             </div>
             <div class="coin-daily">
-               <h1 class="price">${{ethereumInfo.price}}</h1>
-               <h1 class="price" >{{ethereumInfo.percent_change_24h}}%</h1>
-               <h1>${{ethereumInfo.volume_24h | number : '1.1-1'}}</h1>
+               <h1 class="price" [ngClass]="{'positive-price': coinData.percentage }">${{ethereum[0].price}}</h1>
+               <h1 class="price" [ngClass]="{'positive-price': coinData.percentage }">{{ethereum[0].percentage}}%</h1>
+               <h1>${{ethereum[0].volume | number : '1.1-1'}}</h1>
             </div>
          </div>
          <div>
@@ -48,13 +49,14 @@
                <img class="logo" src="/assets/images/ripple-logo-grey.png" alt="coin-logo">
             </div>
             <div class="coin-daily">
-               <h1 class="price">${{rippleInfo.price}}</h1>
-               <h1 class="price">{{rippleInfo.percent_change_24h}}%</h1>
-               <h1>${{rippleInfo.volume_24h | number : '1.1-1'}}</h1>
+               <h1 class="price" [ngClass]="{'positive-price': coinData.percentage }">${{ripple[0].price}}</h1>
+               <h1 class="price" [ngClass]="{'positive-price': coinData.percentage }">{{ripple[0].percentage}}%</h1>
+               <h1>${{ripple[0].volume | number : '1.1-1'}}</h1>
             </div>
          </div>
       </div>
    </div>
+   
 </div>
 <div class="indexpage-chart">
   <app-index-coin></app-index-coin>
