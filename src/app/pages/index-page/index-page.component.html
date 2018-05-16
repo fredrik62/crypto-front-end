@@ -34,9 +34,11 @@
                <img class="logo" src="/assets/images/bitcoin-logo-orange.png" alt="coin-logo">
             </div>
             <div class="coin-daily">
+              <ng-container *ngIf="coinData">
                <h1 class="price" [ngClass]="{'positive-price': coinData.percentage }">${{bitcoin[0].price}}</h1>
                <h1 class="price" [ngClass]="{'positive-price': coinData.percentage }">{{bitcoin[0].percentage}}%</h1>
                <h1 class="volume-index">${{bitcoin[0].volume | number : '1.1-1'}}</h1>
+              </ng-container>
             </div>
          </div>
          <div>
@@ -44,9 +46,11 @@
                <img class="logo" src="/assets/images/eth-logo-blue.png" alt="coin-logo">
             </div>
             <div class="coin-daily">
+              <ng-container *ngIf="coinData">
                <h1 class="price" [ngClass]="{'positive-price': coinData.percentage }">${{ethereum[0].price}}</h1>
                <h1 class="price" [ngClass]="{'positive-price': coinData.percentage }">{{ethereum[0].percentage}}%</h1>
                <h1 class="volume-index">${{ethereum[0].volume | number : '1.1-1'}}</h1>
+              </ng-container>
             </div>
          </div>
          <div>
@@ -54,10 +58,12 @@
                <img class="logo" src="/assets/images/ripple-logo-grey.png" alt="coin-logo">
             </div>
             <div class="coin-daily">
+                <ng-container *ngIf="coinData">
                <h1 class="price" [ngClass]="{'positive-price': coinData.percentage }">${{ripple[0].price}}</h1>
                <h1 class="price" [ngClass]="{'positive-price': coinData.percentage }">{{ripple[0].percentage}}%</h1>
                <h1 class="volume-index">${{ripple[0].volume | number : '1.1-1'}}</h1>
-            </div>
+              </ng-container>
+              </div>
          </div>
       </div>
    </div>
