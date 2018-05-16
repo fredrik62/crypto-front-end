@@ -1,4 +1,6 @@
 
+
+
 .parallax-top{
   background-image: url("/assets/images/stock-chart.jpg");
   background-attachment: fixed;
@@ -19,15 +21,23 @@
     
   } 
 
-
+  .platform-feature {
+      text-align: center;
+      text-transform: uppercase;
+      margin: 0 auto;
+      padding-top: 60px;
+      font-size: 2.2em;
+      font-family: 'Share Tech', sans-serif;
+  }
+  #feature > span {
+      color: #f7931a !important;
+  }
 
 .box-page-wrapper {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
     text-align: center;
-    padding-top: 100px;
-    padding-bottom: 50px;
     max-width: 1300px;
     margin: 0 auto;
 }
@@ -38,7 +48,7 @@
 
 .box-page-wrapper > .small-box {
     margin-top: 45px;
-    min-height: 30vh;
+    height: 35vh;
     width: 46%;
     
 }
@@ -71,7 +81,6 @@
   
 
 .box-page-wrapper > .wide-box{
-    margin-top: 120px;
     width: 90vw;
     text-align: center;
 
@@ -110,28 +119,28 @@
 
 
 
-   .top-volume {
-    background-image: url("http://www.islabit.com/wp-content/uploads/2018/05/Bitcoin-5.jpg");
+.top-volume {
+    background-image: url("assets/images/top-increace-coins-card.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
 }
 
 .top-coins {
-    background-image: url("https://img.freepik.com/free-vector/bitcoin-design-with-rising-arrow_1017-9625.jpg?size=338&ext=jpg");
+    background-image: url("assets/images/top-coins-card.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
 }
    .portfolio {
-       background-image: url("https://cdn-images-1.medium.com/max/1500/1*mXLf9Qx_OS25FJM4_tVofA.jpeg");
+       background-image: url("assets/images/portfolio-card.png");
        background-size: cover;
        background-repeat: no-repeat;
        background-position: center;
    }
 
    .top-news {
-       background-image: url("https://lh4.googleusercontent.com/k9axfWBWJjZWauLh8s1R6yf_EW7HP4H9vOg1_f2t145Y0x77gDOBL0N1JbFPPFyd07fVzuE5QbVv4PXBJyxxzQgluh3XDiwezmn-hjBZggEuIrD1j6EvMfX5-XS1CK9l5g1YAy0K");
+       background-image: url("assets/images/crytocurrency-news-card.png");
        background-size: cover;
        background-repeat: no-repeat;
        background-position: center;
@@ -140,6 +149,7 @@
 @media (max-width:768px) {
 .box-page-wrapper > .small-box {
     width: 90vw;
+    height: 40vh;
     padding-bottom: 50px;
 }
 
@@ -154,5 +164,8 @@
  .coin-image > .logo {
     min-width: 50px;
     max-height: 45px;
+}
+#feature {
+    font-size: 1em;
 }
 }

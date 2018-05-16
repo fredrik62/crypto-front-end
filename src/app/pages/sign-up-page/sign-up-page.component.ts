@@ -16,6 +16,8 @@ export class SignUpPageComponent implements OnInit {
   processing = false;
   user: any = {};
  
+  username: String;
+  password: String;
 
   constructor(private authService: AuthService, private router: Router) { }
 
