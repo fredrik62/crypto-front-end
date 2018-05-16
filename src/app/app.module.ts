@@ -34,6 +34,7 @@ import { CryptoChartService } from './services/crypto-chart.service';
 import { RequireAnonGuardService } from './guards/require-anon-guard.service';
 import { RequireUserGuardService } from './guards/require-user-guard.service';
 import { InitAuthGuardService } from './guards/init-auth-guard.service';
+import { DonutCanvasComponent } from './components/donut-canvas/donut-canvas.component';
 
 
 const routes: Routes = [
@@ -63,7 +64,8 @@ const routes: Routes = [
     CryptoTopIncreasePageComponent,
     IncreaseDetailPageComponent,
     PortfolioPageComponent,
-    IndexCoinComponent
+    IndexCoinComponent,
+    DonutCanvasComponent
   
   ],
   imports: [
