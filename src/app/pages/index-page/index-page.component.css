@@ -1,8 +1,13 @@
 
-
+#parallax-title {
+   
+    z-index: 1000;
+    top: 200px;
+    left: 200px;
+}
 
 .parallax-top{
-  background-image: url("/assets/images/stock-chart.jpg");
+  background-image: url("assets/images/topical-crypto-parallax-bg.jpg");
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -95,6 +100,7 @@
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
+    padding-top:50px;
 
 }
 
@@ -155,6 +161,11 @@
 
 .market-information > div {
     width: 90vw;
+    
+}
+
+.parallax-top {
+        background-attachment: scroll;
     
 }
 

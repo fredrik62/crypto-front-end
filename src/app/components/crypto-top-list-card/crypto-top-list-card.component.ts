@@ -14,7 +14,6 @@ export class CryptoTopListCardComponent implements OnInit {
   }
 
   coinGraphRedirect(id){
-    console.log("function called");
       this.router.navigate(['topcoins', id]);
   }
 

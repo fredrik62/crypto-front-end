@@ -3,6 +3,7 @@ import { CryptoService } from '../../services/crypto.service';
 import { Router, ActivatedRoute } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { Chart } from 'chart.js';
+import { CryptoChartService } from '../../services/crypto-chart.service';
 
 @Component({
   selector: 'app-crypto-chart-page',
@@ -18,6 +19,7 @@ export class CryptoChartPageComponent implements OnInit {
   positive: boolean;
   priceDates = [];
   coinData: any = [];
+  donutCanvas: any;
   desktopDisplay: boolean = window.innerWidth > 400;
 
   @HostListener('window:resize') resizeDetection() { 
@@ -25,7 +27,7 @@ export class CryptoChartPageComponent implements OnInit {
     this.chart.options.scales.xAxes[0].ticks.display = window.innerWidth > 800;
   }
   
-  constructor(private cryptoService: CryptoService, private activatedRoute: ActivatedRoute, private router: Router) {
+  constructor(private cryptoService: CryptoService, private cryptoChartService: CryptoChartService, private activatedRoute: ActivatedRoute, private router: Router) {
       
    }
 
@@ -37,10 +39,12 @@ export class CryptoChartPageComponent implements OnInit {
           .toPromise()
           .then((res) => {
               this.cryptos = res;
+             
               const name = this.cryptos.data.symbol;
                 
               this.coinData = {
                    coinName: this.cryptos.data.name,
+                   coinMarketShare: this.cryptos.data.quotes.USD.market_cap,
                    coinRank: this.cryptos.data.rank,
                    circulatingSupply: this.cryptos.data.circulating_supply,
                    maxSupply: this.cryptos.data.max_supply,
@@ -108,7 +112,49 @@ export class CryptoChartPageComponent implements OnInit {
   
                   })
   
-          })
-  })
+                  this.cryptoChartService.bitcoinDominance()
+                  .toPromise()
+                  .then((res) => {
+            
+                    let totalMarketShare = res['data'].quotes.USD.total_market_cap;
+                    
+            
+            
+            
+                  
+            
+                    this.donutCanvas = new Chart('donut-canvas', {
+                      type: 'doughnut',
+                      data: {
+                        labels: [this.coinData.coinName + " Market Share", "Total Market Value"],
+                        datasets: [{
+                          data: [this.coinData.coinMarketShare, totalMarketShare],
+                          backgroundColor: [
+                            '#f7931a',
+                            '#f0f0f0'
+                          ],
+                          borderColor: [
+                            'rgba(255,99,132,1)',
+                            'rgba(54, 162, 235, 1)',
+                          ],
+                          borderWidth: 1
+                        }]
+                      },
+                      options: {
+                        
+                        cutoutPercentage: 55,
+                        legend: {
+                          display: true,
+                          labels: {
+                            fontSize: 30
+                          }
+                        }
+                      }
+                    });
+                  })
+              }
+            
+          )
   }
-  }
+    )}}
+  

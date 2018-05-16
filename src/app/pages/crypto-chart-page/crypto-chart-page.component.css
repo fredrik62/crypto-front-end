@@ -22,12 +22,21 @@ th, td {
 }
 
 
-.number {
-
+#donut-canvas {
+  width: 80%;
+  max-width: 800px;
+  height: auto;
+  margin: 0 auto;
 }
+
+
+.coin-dom {
+  padding-top:50px;
+  padding-bottom: 30px;
+}
+
 .timestamp {
   text-align: center;
-  padding-top: 130px;
   color: #f7931a;
   font-family: 'Share Tech Mono', monospace;
 }
@@ -55,6 +64,6 @@ th, td {
       flex-direction: column;
       line-height: 35px;
     }
- 
+
   
 }
