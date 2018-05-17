@@ -13,6 +13,7 @@
   transition: 0.4s;
   max-width: 1000px;
   margin: 0 auto;
+
   
 }
 
@@ -24,8 +25,23 @@
  text-align: center;
  
 }
+.crypto-row > div {
+  width: 33.3%;
+  
+}
 
+.price-position > div {
+ display: flex;
+  justify-content: center;
+}
 
-.positive-price {
-color: green;
- }
+.percentage-position {
+  text-align: right;
+}
+
+.timestamp {
+  text-align: center;
+  color: #f7931a;
+  font-family: 'Share Tech Mono', monospace;
+  padding-top: 255px;
+}

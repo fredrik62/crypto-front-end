@@ -39,6 +39,7 @@ th, td {
   text-align: center;
   color: #f7931a;
   font-family: 'Share Tech Mono', monospace;
+  padding-top: 60px;
 }
 
 #canvas {
@@ -58,12 +59,7 @@ th, td {
 
  @media (max-width:768px) {
    
-    .gen-coin-info {
-      font-size: 16px;
-      display: flex;
-      flex-direction: column;
-      line-height: 35px;
-    }
+ 
 
   
 }

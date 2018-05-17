@@ -1,0 +1,45 @@
+.main {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.main-news {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  border: 3px solid #373733;
+}
+
+.main-news > img {
+  max-height: 250px;
+  margin: 0 auto;
+  padding-bottom: 50px;
+  padding-top: 50px;
+}
+
+.main-news > p {
+  text-align: block !important;
+  padding-bottom:50px;
+  color: #f0f0f0;
+  font-weight: 400;
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 1.2em;
+}
+
+h4 {
+  text-transform: uppercase;
+  font-size: 1.6em;
+  color: #f7931a;
+  line-height: 35px;
+}
+
+@media (max-width:768px) {
+   
+ 
+.main-news {
+  width: 90vw;
+  margin: 0 auto;
+}
+  
+}

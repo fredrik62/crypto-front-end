@@ -3,18 +3,27 @@
     <p>...loading</p>
 </div>
 
+
 <div class="crypto-row">
-    <h4>top gainers this week</h4>
+    <h4>Coin</h4>
+    <h4>Price</h4>
+    <h4>24H %</h4>
 </div>
 
 <div class="crypto-row" *ngFor="let crypto of topIncrease" (click)="coinGraphRedirect(crypto.coinId)">
     <div>
         <span>{{crypto.name}}</span>
     </div>
-    <div>
-        <span class="price usd-coin-price"> ${{crypto.coinPrice}}</span>
+    <div class="price-position">
+        <div>
+            <span class="positive-price">${{crypto.coinPrice}}</span>
+        </div>
     </div>
-    <div>
-        <span class="positive-price">{{crypto.percentage}}%</span>
+    <div class="percentage-position">
+        <span class="positive-price">{{crypto.percentage}}%%</span>
     </div>
+</div>
+
+<div class="gen-coin-info">
+    <div class="timestamp"> Last Updated @ {{timeUpdate[0]}}</div>
 </div>

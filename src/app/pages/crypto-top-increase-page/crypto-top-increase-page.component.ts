@@ -10,6 +10,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class CryptoTopIncreasePageComponent implements OnInit {
   cryptos: any;
   topIncrease: Array < any > = [];
+  timeUpdate: Array < any > = [];
 
   constructor(private cryptoService: CryptoService, private activatedRoute: ActivatedRoute, private router: Router) {}
 
@@ -18,6 +19,17 @@ export class CryptoTopIncreasePageComponent implements OnInit {
           .toPromise()
           .then((res) => {
               this.cryptos = res;
+              console.log(this.cryptos);
+
+              
+                let jsDate = new Date(this.cryptos[0].last_updated * 1000)
+                this.timeUpdate.push(jsDate.toLocaleTimeString('en', {
+                    year: 'numeric',
+                    month: 'short',
+                    day: 'numeric'
+                }))
+                
+           
               this.cryptos.forEach(crypto => {
                   let increase = {
                       percentage: crypto.quotes.USD.percent_change_7d,
@@ -26,7 +38,7 @@ export class CryptoTopIncreasePageComponent implements OnInit {
                       coinPrice: crypto.quotes.USD.price,
                       symbol: crypto.symbol
                   }
-                  if (increase.percentage > 20) {
+                  if (increase.percentage > 5) {
                       this.topIncrease.push(increase);
                   }
 

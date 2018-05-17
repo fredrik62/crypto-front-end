@@ -98,9 +98,7 @@ button, input:focus {
 
 @media (max-width:768px) {
  
-  #loginbox {
-    height: 100vh;
-  }
+
   }
 
 

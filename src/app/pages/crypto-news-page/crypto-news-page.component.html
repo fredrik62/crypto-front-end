@@ -1,3 +1,13 @@
-<p>
-  crypto-news-page works!
-</p>
+<div class="main" *ngFor="let crypto of displayData">
+  <h4>{{crypto.title}}</h4>
+  <div class="main-news">
+    <img src="{{crypto.image}}" alt="{{crypto.title}}">
+    <p>{{crypto.body}}</p>
+  </div>
+  <a  class="link-btn" href="{{crypto.readMore}}">Read more</a>
+
+</div>
+
+
+
+

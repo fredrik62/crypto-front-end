@@ -24,11 +24,16 @@
  text-align: center;
  
 }
-
-
-.price {
-  color: #bf0d0d;
+.crypto-row > div {
+  width: 33.3%;
+  
 }
-.positive-price {
-color: green;
- }
+
+.price-position > div {
+ display: flex;
+  justify-content: center;
+}
+
+.percentage-position {
+  text-align: right;
+}

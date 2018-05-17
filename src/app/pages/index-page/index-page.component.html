@@ -1,75 +1,55 @@
-
 <div class="parallax-top">
 </div>
 <div class="platform-feature">
-  <h1 id="feature">fea<span>t</span>ure<span>s</span></h1>
+  <h1 id="feature">fea<span>t</span>ure<span>s</span>
+  </h1>
 </div>
 <div class="box-page-wrapper">
-   <div class="top-volume small-box cursor" (click)="redirectToVolume()">
-      <div class="overlay">
-          <div class="text">View Top Gainers</div>
+  <div class="top-volume small-box cursor" (click)="redirectToVolume()">
+    <div class="overlay">
+      <div class="text">View Top Gainers</div>
+    </div>
+  </div>
+  <div class="top-coins small-box cursor" (click)="redirectToCoins()">
+    <div class="overlay">
+      <div class="text">View Top Coins</div>
+    </div>
+  </div>
+  <div class="small-box cursor top-news" (click)="redirectToNews()">
+    <div class="overlay">
+      <div class="text">Read More</div>
+    </div>
+  </div>
+  <div class="small-box cursor portfolio" (click)="redirectToPortfolio()">
+    <div class="overlay">
+      <div class="text">Build your portfolio</div>
+    </div>
+  </div>
+
+  <div class="wide-box">
+    <div class="platform-feature">
+      <h1 id="feature">
+        <span>market</span> informatio<span>n</span>
+      </h1>
+    </div>
+    <div class="market-information">
+      <div *ngFor="let coin of coinsToDisplay; let i = index">
+        <div class="coin-image">
+          <img class="logo" src="/assets/images/{{coinImages[i]}}" alt="coin-logo">
         </div>
-   </div>
-   <div class="top-coins small-box cursor" (click)="redirectToCoins()">
-      <div class="overlay">
-          <div class="text">View Top Coins</div>
+        <div class="coin-daily">
+          <ng-container *ngIf="coin">
+            <h1 class="price" [ngClass]="{'positive-price': coin.positiveChange }">${{coin.price}}</h1>
+            <h1 class="price" [ngClass]="{'positive-price': coin.positiveChange }">{{coin.percentage}}%</h1>
+            <h1 class="volume-index">${{coin.volume | number : '1.1-1'}}</h1>
+          </ng-container>
         </div>
       </div>
-   <div class="small-box cursor top-news" (click)="redirectToNews()">
-      <div class="overlay">
-          <div class="text">Read More</div>
-        </div>
-   </div>
-   <div class="small-box cursor portfolio" (click)="redirectToPortfolio()">
-      <div class="overlay">
-          <div class="text">Build your portfolio</div>
-        </div>
-   </div>
-   
-   <div class="wide-box">
-      <div class="platform-feature">
-          <h1 id="feature"><span>market</span> informatio<span>n</span></h1>
-        </div>
-      <div class="market-information">
-         <div>
-            <div class="coin-image">
-               <img class="logo" src="/assets/images/bitcoin-logo-orange.png" alt="coin-logo">
-            </div>
-            <div class="coin-daily">
-              <ng-container *ngIf="coinData">
-               <h1 class="price" [ngClass]="{'positive-price': coinData.percentage }">${{bitcoin[0].price}}</h1>
-               <h1 class="price" [ngClass]="{'positive-price': coinData.percentage }">{{bitcoin[0].percentage}}%</h1>
-               <h1 class="volume-index">${{bitcoin[0].volume | number : '1.1-1'}}</h1>
-              </ng-container>
-            </div>
-         </div>
-         <div>
-            <div class="coin-image">
-               <img class="logo" src="/assets/images/eth-logo-blue.png" alt="coin-logo">
-            </div>
-            <div class="coin-daily">
-              <ng-container *ngIf="coinData">
-               <h1 class="price" [ngClass]="{'positive-price': coinData.percentage }">${{ethereum[0].price}}</h1>
-               <h1 class="price" [ngClass]="{'positive-price': coinData.percentage }">{{ethereum[0].percentage}}%</h1>
-               <h1 class="volume-index">${{ethereum[0].volume | number : '1.1-1'}}</h1>
-              </ng-container>
-            </div>
-         </div>
-         <div>
-            <div class="coin-image">
-               <img class="logo" src="/assets/images/ripple-logo-grey.png" alt="coin-logo">
-            </div>
-            <div class="coin-daily">
-                <ng-container *ngIf="coinData">
-               <h1 class="price" [ngClass]="{'positive-price': coinData.percentage }">${{ripple[0].price}}</h1>
-               <h1 class="price" [ngClass]="{'positive-price': coinData.percentage }">{{ripple[0].percentage}}%</h1>
-               <h1 class="volume-index">${{ripple[0].volume | number : '1.1-1'}}</h1>
-              </ng-container>
-              </div>
-         </div>
-      </div>
-   </div>
-   
+    </div>
+
+
+
+  </div>
 </div>
 <div class="indexpage-chart">
   <app-index-coin></app-index-coin>

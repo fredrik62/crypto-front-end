@@ -12,10 +12,12 @@
     <div>
         <span>{{crypto.symbol}}</span>
     </div>
-    <div>
+    <div class="price-position">
+        <div>
         <span class="price usd-coin-price" [ngClass]="{'positive-price': crypto.quotes.USD.positive }"> ${{crypto.quotes.USD.price}}</span>
+        </div>
     </div>
-    <div>
+    <div class="percentage-position">
         <span class="price" [ngClass]="{'positive-price': crypto.quotes.USD.positive }">{{crypto.quotes.USD.percent_change_24h}}%</span>
     </div>
 </div>
