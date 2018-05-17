@@ -19,7 +19,7 @@ export class CryptoTopIncreasePageComponent implements OnInit {
           .toPromise()
           .then((res) => {
               this.cryptos = res;
-              console.log(this.cryptos);
+              
 
               
                 let jsDate = new Date(this.cryptos[0].last_updated * 1000)

@@ -18,7 +18,7 @@ displayData = [];
     .toPromise()
      .then(res => { 
        this.news = res;
-       console.log(this.news)
+      
        this.news.forEach(crypto => {
          this.newsData = {
            title: crypto.title,
