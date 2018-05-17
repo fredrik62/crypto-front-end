@@ -203,8 +203,8 @@
     height: 40vh;
 }
 
-#parallax-title > span {
-    font-size: 0.75em;
+#parallax-title  {
+    font-size: 2.9em;
 }
 .parallax-top {
   background-attachment: scroll;

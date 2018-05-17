@@ -56,7 +56,7 @@ export class DonutCanvasComponent implements OnInit {
             legend: {
               display: true,
               labels: {
-                fontSize: 30
+                fontSize: 26
               }
             }
           }

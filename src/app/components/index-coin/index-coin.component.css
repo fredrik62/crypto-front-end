@@ -1,6 +1,9 @@
 #canvas {
   padding:5px;
   max-height: 60vh;
+  max-width: 90vw;
+  margin: 0 auto;
+ 
  
 }
 
