@@ -20,8 +20,11 @@
             <span class="username text">loading...</span>
           </div>
           <div class="nav-right" *ngIf="!loading && !!user">
-            <span> Welcome {{user.username}}! </span>
-            <a (click)="logout()">logout</a>
+            <a [routerLink]="['/portfolio']">portfolio</a>
+            <a [routerLink]="['/topcoins']">top coins</a>
+            <a [routerLink]="['/gainers']">gainers</a>
+            <a [routerLink]="['/cryptocurrency-news']">news</a>
+            <a class="user-sessions" (click)="logout()">logout</a>
           </div>
           <div  class="nav-links-right" *ngIf="!loading && anon">
             <div class="nav-title nav-right">
