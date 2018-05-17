@@ -146,6 +146,8 @@ a {
 
 .nav-right > a {
   cursor: pointer;
+  text-decoration: none;
+  color: #f0f0f0;
  
 }
 .user-sessions{
