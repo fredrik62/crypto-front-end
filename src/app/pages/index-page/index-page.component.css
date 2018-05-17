@@ -62,14 +62,6 @@
     -webkit-box-direction: normal;
   }
 
-  h5:after,
-  h5:before {
-    content: '';
-    width: 50px;
-    height: 2px;
-    background: orange;
-    margin: 0 10px;
-  }
   .platform-feature {
       text-align: center;
       text-transform: uppercase;
