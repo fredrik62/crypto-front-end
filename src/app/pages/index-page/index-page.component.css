@@ -1,9 +1,6 @@
 
-#parallax-title {
-   
-    z-index: 1000;
-    top: 200px;
-    left: 200px;
+#parallax-title > span {
+    color: #f7931a !important;
 }
 
 .parallax-top{
@@ -26,6 +23,53 @@
     
   } 
 
+  .welcome {
+    height: 200px;
+    background-color: #fff;
+    word-wrap: normal;
+    word-break: keep-all;
+    font-family: 'Montserrat';
+    font-weight: 700;
+    font-size: 31px;
+    line-height: 1.125em;
+    margin-right: 0;
+    margin-left: 0;
+    margin-bottom: 0;
+    box-sizing: border-box;
+    top: 300px;
+  }
+  
+  .Welcome {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  h5 {
+    color: #f0f0f0;
+    top: 300px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    padding-bottom: 38px;
+    font-size: 4.0em;
+    font-family: 'Share Tech', sans-serif;
+    -webkit-tap-highlight-colour: rgba(0, 0, 0, 0);
+    -webkit-font-smoothing: antialiased;
+    -webkit-box-direction: normal;
+  }
+
+  h5:after,
+  h5:before {
+    content: '';
+    width: 50px;
+    height: 2px;
+    background: orange;
+    margin: 0 10px;
+  }
   .platform-feature {
       text-align: center;
       text-transform: uppercase;
@@ -167,6 +211,9 @@
     height: 40vh;
 }
 
+#parallax-title > span {
+    font-size: 0.9em;
+}
 .parallax-top {
   background-attachment: scroll;
   background-image: url("assets/images/topical-crypto-parallax-bg.jpg");
