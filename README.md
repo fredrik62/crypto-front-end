@@ -18,15 +18,15 @@ BACKLOG
 
 CLIENT
 
-/ - The homepage
-routerLink /login
-routerLink /signup
-routerLink /topcoins
-routerLink /topcoins/:id
-routerLink /gainers
-routerLink /gainers/:id
-routerLink /cryptocurrency-news
-routerLink /portfolio
+- / - The homepage
+- routerLink /login
+- routerLink /signup
+- routerLink /topcoins
+- routerLink /topcoins/:id
+- routerLink /gainers
+- routerLink /gainers/:id
+- routerLink /cryptocurrency-news
+- routerLink /portfolio
 
 
 API
@@ -39,16 +39,16 @@ API
 
 ROUTES
 
-POST /auth/signup -- creates a new account
-POST /auth/login -- connects the user to his/her account
-POST /auth/logout -- removes user from session
-GET /auth/me -- returns current user in session (if any)
+- POST /auth/signup -- creates a new account
+- POST /auth/login -- connects the user to his/her account
+- POST /auth/logout -- removes user from session
+- GET /auth/me -- returns current user in session (if any)
 
-GET /topcoins -- retruns top 100 coins
-GET /topcoins/:id -- retruns one specific coin with data visualization + general information
-GET /gainers -- retruns top gainers
-GET /gainers:/id -- retruns one specific coin with data visualization + general information
-GET /cryptocurrency-news -- returns 50 articles of news related to the cryptocurrency industry
+- GET /topcoins -- retruns top 100 coins
+- GET /topcoins/:id -- retruns one specific coin with data visualization + general information
+- GET /gainers -- retruns top gainers
+- GET /gainers:/id -- retruns one specific coin with data visualization + general information
+-GET /cryptocurrency-news -- returns 50 articles of news related to the cryptocurrency industry
 
 
 
