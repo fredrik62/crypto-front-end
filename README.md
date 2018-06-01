@@ -1,27 +1,65 @@
-# FrontEnd
+MVP
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.7.4.
+- User registration
+- User Sign in
 
-## Development server
+- Responsive design
+- Display top 100 coins
+- Display chart with Chart.JS
+- Top volume increase
+- Cryptocurrency news
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+BACKLOG
+- Coin Portfolio
+- Password Recovery
+- Connect to NiceHASH to view miner status
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
+CLIENT
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+/ - The homepage
+routerLink /login
+routerLink /signup
+routerLink /topcoins
+routerLink /topcoins/:id
+routerLink /gainers
+routerLink /gainers/:id
+routerLink /cryptocurrency-news
+routerLink /portfolio
 
-## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+API
 
-## Running end-to-end tests
+- https://api.coinmarketcap.com/v2/ticker/
+- https://api.coinmarketcap.com/v2/global/
+- https://min-api.cryptocompare.com/data/histoday?fsym=`${symbol}`&tsym=USD&limit=10
+- https://min-api.cryptocompare.com/data/v2/news/?lang=EN
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
+ROUTES
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+POST /auth/signup -- creates a new account
+POST /auth/login -- connects the user to his/her account
+POST /auth/logout -- removes user from session
+GET /auth/me -- returns current user in session (if any)
+
+GET /topcoins -- retruns top 100 coins
+GET /topcoins/:id -- retruns one specific coin with data visualization + general information
+GET /gainers -- retruns top gainers
+GET /gainers:/id -- retruns one specific coin with data visualization + general information
+GET /cryptocurrency-news -- returns 50 articles of news related to the cryptocurrency industry
+
+
+
+
+SERVICES
+
+- Auth.service()
+- Crypto.service()
+- Crypto-Chart.service()
+- News.service()
+
+
+
+This was my final project for the bootcamp I attended. This project was made in 10 days.
