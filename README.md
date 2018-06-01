@@ -1,3 +1,6 @@
+
+This was my final project for the bootcamp I attended. This project was made in 10 days.
+
 MVP
 
 - User registration
@@ -48,7 +51,7 @@ ROUTES
 - GET /topcoins/:id -- retruns one specific coin with data visualization + general information
 - GET /gainers -- retruns top gainers
 - GET /gainers:/id -- retruns one specific coin with data visualization + general information
--GET /cryptocurrency-news -- returns 50 articles of news related to the cryptocurrency industry
+- GET /cryptocurrency-news -- returns 50 articles of news related to the cryptocurrency industry
 
 
 
@@ -62,4 +65,3 @@ SERVICES
 
 
 
-This was my final project for the bootcamp I attended. This project was made in 10 days.
